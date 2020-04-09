@@ -1,28 +1,12 @@
-<?php session_start();?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<p><b>You are welcome</b></p>
-<div>
+<?php include_once("header.php");?>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Welcome to SNG: Hospital for the ignorant</h1>
+  <p class="lead">This is a specialist hospital to cure ignorance.</p>
+  <p class="lead">Come as you are welcome, it is completely free.</p>
 
-<ul>
-<li><a href="index.php">Home</a></li>
-<?php if(isset($_SESSION['loggedIn'])){ ?>
-
-
-<li><a href="login.php">Login</a></li>
-<li><a href="register.php">Register</a></li>
-<?php }else{ ?>
-<li><a href="logout.php">Logout</a></li>
-<?php } ?>
-</ul>
+  <p>
+  <button class="btn-btn-bg-outline-secondary " href ="login.php">Login</button>
+  <button class="btn-btn-bg-outline-primary " href ="register.php">Register</button>
+  
+  </p>
 </div>
-</body>
-</html>
-    
-    

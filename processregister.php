@@ -13,7 +13,6 @@ $department = $_POST["department"]!=""?$_POST["department"]: $errorcount++;
  $_SESSION["firstname"] = $firstname;
  $_SESSION["lastname"] = $lastname;
  $_SESSION["email"] = $email;
- 
  $_SESSION["gender"] = $gender;
  $_SESSION["designation"] = $designation;
  $_SESSION["department"] = $department;
@@ -22,9 +21,9 @@ $department = $_POST["department"]!=""?$_POST["department"]: $errorcount++;
 
  if($errorcount > 0){
     
-    $sesssion_error = "you have"  . $errorcount .  "error in your form submission";
+    $sesssion_error = "you have "  . $errorcount .  " error in your form submission";
     if($errorcount >1){
-        $sesssion_error =  "you have" .$errorcount. "errors in your form submission";
+        $sesssion_error =  "you have " .$errorcount. " errors in your form submission";
         
     }
     
@@ -41,7 +40,7 @@ $department = $_POST["department"]!=""?$_POST["department"]: $errorcount++;
          'firstname'=> $firstname,
          'lastname'=> $lastname,
          'email'=> $email,
-         'password'=> $password,
+         'password'=> password_hash($password,PASSWORD_DEFAULT),
          'gender'=> $gender,
          'designation'=> $designation,
          'department'=> $department
@@ -53,12 +52,12 @@ $department = $_POST["department"]!=""?$_POST["department"]: $errorcount++;
 
          if($currentUser == $email. " . json"){
              
- $_SESSION["error"] = "Registration failed,User already exists";
+    $_SESSION["error"] = "Registration failed,User already exists";
     header('location:register.php');       
               }
      }
       file_put_contents("db/users/". $email . ". json",json_encode($userObject));
-      $_SESSION["error"] = "Registration successful, you can now login". $firstname;
+      $_SESSION["error"] = "Registration successful, you can now login ". $firstname;
       header('location:login.php');
 
     }

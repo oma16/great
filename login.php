@@ -1,11 +1,13 @@
 <?php
-include_once("index.php");
+include_once("header.php");
 if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
   header('location:dashboard.php');}?>
 
-
+<div class = "container">
+<div class = "row col-6">
 <h3>Login</h3>
-
+</div>
+<div class = "row col-6">
 <form action="processlogin.php" method="post">
 <p>
 <?php
@@ -32,7 +34,8 @@ if(isset($_SESSION['error'])&& !empty($_SESSION['error'])){
 <input type="password" name="password" placeholder="password">
 </p>
 <p>
-<button type="submit">login</button>
+<button class = "btn-success" type="submit">login</button>
 </p>
 </form>
-  
+</div>
+</div>
