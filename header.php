@@ -24,7 +24,8 @@
     <a class="p-2 text-dark" href="forgot.php">Forgot password</a>
 
 <?php }else{ ?>
-    <a class="p-2 text-dark" href="reset.php">Reset</a>
+    <a class="p-2 text-dark btn-btn-secondary" href="dashboard.php">Dashboard</a>
+    <a class="p-2 text-dark" href="reset.php">Reset password</a>
     <a class="p-2 text-dark" href="logout.php">Logout</a>
     <?php } ?>
     

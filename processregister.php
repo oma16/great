@@ -46,6 +46,8 @@ $department = $_POST["department"]!=""?$_POST["department"]: $errorcount++;
          'department'=> $department
          
      ]; 
+        $allUsers = scandir("db/users/");
+         $countAllUsers = count($allUsers);
 
      for($counter = 0; $counter < $countAllUsers; $counter++){
          $currentUser = $allUsers[$counter];
@@ -57,7 +59,7 @@ $department = $_POST["department"]!=""?$_POST["department"]: $errorcount++;
               }
      }
       file_put_contents("db/users/". $email . ". json",json_encode($userObject));
-      $_SESSION["error"] = "Registration successful, you can now login ". $firstname;
+      $_SESSION["message"] = "Registration successful, you can now login ". $firstname;
       header('location:login.php');
 
     }

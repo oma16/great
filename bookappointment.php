@@ -1,4 +1,6 @@
 <?php include_once("header.php");
+require_once("function/alert.php");
+
 
 if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
   header('location:dashboard.php');
@@ -23,10 +25,9 @@ if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
 <div>
 <p>
 <?php
-if(isset($_SESSION['error'])&& !empty($_SESSION['error'])){
-    echo "<span style = color:blue>".$_SESSION['error']."</span>";
-    session_destroy();
-}
+
+print_error(); print_message();
+
 ?>
 </p>
 
@@ -239,3 +240,4 @@ if(isset($_SESSION['error'])&& !empty($_SESSION['error'])){
 </div>
 
 </div>
+<?php include_once("footer.php");?>

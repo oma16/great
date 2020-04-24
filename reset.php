@@ -1,7 +1,9 @@
 <?php 
 include_once("header.php");
+require_once("function/alert.php");
+require_once('function/user.php');
 
-if(!isset($_GET['token']) && !isset($_SESSION['token'])){
+if(!is_user_loggedIn() && !is_token_set()){
 
     $_SESSION["error"] = "You are not authorized to view that page";
       header('location: login.php');
@@ -9,23 +11,25 @@ if(!isset($_GET['token']) && !isset($_SESSION['token'])){
     }
 ?>
 
-
+<div class = "container">
+  <div class = "row col-6">
   <h3>Reset password</h3>
+  </div>
+  <div class = "row col-6">
   <p>Reset password associated with your account: [email]</p>
-
+  </div>
+  <div class = "row col-6">
 <form action="processreset.php" method="post">
 <p>
 <?php
-if(isset($_SESSION["error"])&& !empty($_SESSION["error"])){
-    echo "<span style = color:blue>".$_SESSION["error"]."</span>";
-    session_destroy();
-}
+ print_error(); print_message();
 ?>
 </p>
-<p>
+
+   <?php if(!is_user_loggedIn()){?>
 <input 
 <?php
- if(isset($_SESSION['token'])){
+ if(is_token_set_in_session()){
       echo "value ='".$_SESSION['token']. "'";
   }else{
       echo "value ='". $_GET['token']. "'";
@@ -34,8 +38,8 @@ if(isset($_SESSION["error"])&& !empty($_SESSION["error"])){
 ?> 
 type="hidden" name="token">
 
+<?php } ?>
 
-</p>
 <p>
 <label for="email">Email</label><br>
 <input 
@@ -53,8 +57,10 @@ type="hidden" name="token">
 </p>
 
 <p>
-<button type="submit">reset button</button>
+<button class="btn-success" type="submit">reset button</button>
 </p>
 
 
 </form>
+</div>
+</div>

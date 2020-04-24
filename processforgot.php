@@ -1,4 +1,5 @@
 <?php session_start();
+require_once('function/user.php');
 if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
   header('location:dashboard.php');
 }

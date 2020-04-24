@@ -15,3 +15,4 @@ if(!isset($_SESSION['loggedIn'])){
      <?php echo $_SESSION['role']?>, and your ID is 
      <?php echo $_SESSION['loggedIn']?>
     
+     <?php include_once("footer.php");?>

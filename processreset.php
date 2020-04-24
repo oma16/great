@@ -1,4 +1,5 @@
 <?php session_start();
+require_once('function/user.php');
 
 $errorcount = 0;
          
@@ -25,11 +26,7 @@ $_SESSION['token'] = $token;
 }else {
        $allUserTokens = scandir("db/tokens/");
        $countAllUserTokens = count($allUserTokens);
-       $tokenObject = [
-           'token' =>$token
-        
-        
-    ]; 
+    
 
        for($counter = 0; $counter < $countAllUserTokens; $counter++){
            
@@ -39,9 +36,17 @@ $_SESSION['token'] = $token;
         
             $tokenContent = file_get_contents( "db/tokens/".$currentTokenFile);
             $tokenObject = json_decode($tokenContent);
+
+        
             $tokenFromDB = $tokenObject->token;
 
-            if($tokenFromDB == $token){
+            if($_SESSION['loggedIn']){
+                $checkToken = true;
+            }else{
+               $checkToken = $tokenFromDB == $token;
+            }
+
+            if($checkToken){
                 
                 $allUsers = scandir("db/users/");
                $countAllUsers = count($allUsers);

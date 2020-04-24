@@ -1,4 +1,7 @@
-<?php include_once("header.php")?>
+<?php 
+include_once("header.php");
+require_once("function/alert.php");
+?>
 <div class = "container">
 <div class = "row col-6">
 <h3>Forgot password</h3>
@@ -10,10 +13,7 @@
 <form action="processforgot.php" method="post">
 <p>
 <?php
-if(isset($_SESSION['error'])&& !empty($_SESSION['error'])){
-    echo "<span style = color:blue>".$_SESSION['error']."</span>";
-    session_destroy();
-}
+print_error(); print_message();
 ?>
 </p>
 
@@ -37,3 +37,4 @@ if(isset($_SESSION['error'])&& !empty($_SESSION['error'])){
 </form>
 </div>
 </div>
+<?php include_once("footer.php");?>

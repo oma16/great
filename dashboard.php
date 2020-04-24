@@ -19,8 +19,11 @@ if(!isset($_SESSION['loggedIn'])){
      <?php echo $_SESSION['loggedIn']?>
 
 
-     <?php if($userObject->designation ==['medical team']){ ?>
-  <p><a href="mt.php"></a>Medical Team</p>
-  <?php }else{ ?>
+     
+
+
+     
+     <p><a href="mt.php">Medical Team</a></p>
+  
    <p><a href="patient.php">Patient</a></p>
-   <?php } ?>
+   

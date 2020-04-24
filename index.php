@@ -1,4 +1,14 @@
-<?php include_once("header.php");?>
+<?php 
+include_once("header.php");
+require_once("function/alert.php");
+?>
+
+<p>
+<?php
+  print_error(); print_message();
+?>
+</p>
+
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <h1 class="display-4">Welcome to SNG: Hospital for the ignorant</h1>
   <p class="lead">This is a specialist hospital to cure ignorance.</p>
@@ -10,3 +20,4 @@
   
   </p>
 </div>
+<?php include_once("footer.php");?>

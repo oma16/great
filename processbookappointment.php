@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once('function/user.php');
 
 $errorcount = 0;
 $fullname = $_POST["fullname"]!=""?$_POST["fullname"]: $errorcount++;

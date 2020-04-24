@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once('function/user.php');
+
+
 if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
   header('location:dashboard.php');
 }
@@ -42,10 +45,12 @@ if($errorcount > 0){
           $_SESSION['fullname'] = $userObject->firstname.  " ". $userObject->lastname;
           $_SESSION['role'] = $userObject->designation;
           
-         
-          header('location:dashboard.php');
+      
+                  header('location:dashboard.php');
+          die();
+        
               
-              die();
+              
           
           
 

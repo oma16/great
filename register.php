@@ -1,5 +1,9 @@
 <?php
 include_once("header.php");
+require_once("function/alert.php");
+
+
+
 if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
   header('location:dashboard.php');
 }
@@ -22,10 +26,7 @@ if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
 
   <p>
   <?php
-  if(isset($_SESSION['error'])&& !empty($_SESSION['error'])){
-      echo "<span style = color:blue>".$_SESSION['error']."</span>";
-      session_destroy();
-  }
+  print_error(); print_message();
   ?>
   </p>
   <label for="firstname">Firstname</label> <br>
@@ -101,15 +102,7 @@ if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
         echo "selected";
     }
   ?>>Patient</option>
-  <option 
-  <?php
-    if(isset($_SESSION["designation"]) && $_SESSION["designation"] == "Super Admin"){
-        echo "selected";
-    }
-  ?>>Super Admin</option>
-  </select>
-
-  </p>
+  
   <p>
   <label for="department">Department</label><br>
   <input 
@@ -139,7 +132,7 @@ if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
 
 
 </div>
-
+<?php include_once("footer.php");?>
 
 
   
