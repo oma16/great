@@ -5,7 +5,8 @@ require_once("function/alert.php");
 
 
 if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
-  header('location:dashboard.php');}?>
+  header('location:dashboard.php');}
+  ?>
 
 <div class = "container">
 <div class = "row col-6">

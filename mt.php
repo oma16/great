@@ -39,21 +39,28 @@ $temp .="<th>Nature of appointment</th>";
 $temp .="<th>Initial complaint</th>";
 $temp .="<th>Department</th></tr>";
 
-for($i = 0; $i < $countAllAppointment; $i++){
+
+ 
+
+
+
+
+
 
     $temp .= "<tr>";
-    $temp .= "<td>" . $appointment["fullname"] . "</td>";
-    $temp .= "<td>" . $appointment["date_of_birth"] . "</td>";
-    $temp .= "<td>" . $appointment["gender"] . "</td>";
-    $temp .= "<td>" . $appointment["date_of_appointment"] . "</td>";
+    $temp .= "<td>" . $appointment ["fullname"] . "</td>";
+    $temp .= "<td>" . $appointment ["date_of_birth"] . "</td>";
+    $temp .= "<td>" . $appointment ["gender"] . "</td>";
+    $temp .= "<td>" . $appointment ["date_of_appointment"] . "</td>";
     $temp .= "<td>" . $appointment["time_of_appointment"] . "</td>";
     $temp .= "<td>" . $appointment["nature_of_appointment"] . "</td>";
-    $temp .= "<td>" . $appointment["initial_complaint"] . "</td>";
-    $temp .= "<td>" . $appointment["department"] . "</td>";
+    $temp .= "<td>" . $appointment ["initial_complaint"] . "</td>";
+    $temp .= "<td>" . $appointment ["department"] . "</td>";
     $temp .= "</tr>";
 
     $temp .= "</table>";
+    
 
-    print  $temp;
-}
+    echo  $temp;
+
 

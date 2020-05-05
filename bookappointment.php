@@ -53,7 +53,32 @@ print_error(); print_message();
    type="date" class = "form-control" name="date_of_birth" id="">
 
 </p>
+
 <p>
+  <label for="email">Email</label><br>
+  <input
+  <?php
+    if(isset($_SESSION["email"])){
+        echo "value =".$_SESSION["email"];
+    }
+  ?>
+  type="email"  class = "form-control" name="email" placeholder="Enter email" >
+
+  </p>
+<p>
+<label for="phone_number">Phone Number  </label>
+<input 
+<?php
+  if(isset($_SESSION["phone_number"])){
+      echo "value =".$_SESSION['phone_number'];
+  }
+?>
+   type="number" class = "form-control" name="phone_number" id="">
+  
+
+</p>
+
+
 <p>
 <label for="gender">Gender</label><br>
 <select name="gender" class = "form-control"  id="" >

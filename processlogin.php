@@ -45,9 +45,10 @@ if($errorcount > 0){
           $_SESSION['fullname'] = $userObject->firstname.  " ". $userObject->lastname;
           $_SESSION['role'] = $userObject->designation;
           
-      
-                  header('location:dashboard.php');
-          die();
+    
+          header('location:dashboard.php');
+          die();    
+              
         
               
               
@@ -64,9 +65,9 @@ if($errorcount > 0){
 }
 
 
-  $_SESSION["error"] = "Invalid email or password";
-  header('location:login.php');
-  die();    
+     $_SESSION["error"] = "Invalid email or password";
+      header('location:login.php');
+       die();    
   
   }
 

@@ -21,9 +21,16 @@ if(!isset($_SESSION['loggedIn'])){
 
      
 
-
-     
-     <p><a href="mt.php">Medical Team</a></p>
+<?php
+if($_SESSION['role'] == "Medical Team (MT)"){
+   
+  header('location: mt.php');
   
-   <p><a href="patient.php">Patient</a></p>
+}else{
+  header('location: patient.php');
+  die();
+}
+     
+     
+   
    

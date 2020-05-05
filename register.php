@@ -85,6 +85,7 @@ if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
   ?>
   >Female</option>
   </select>
+  </p>
 
   <p>
   <label for="designation">Designation</label><br>
@@ -102,17 +103,18 @@ if(isset($_SESSION['LoggedIn']) && !empty($_SESSION['LoggedIn'])){
         echo "selected";
     }
   ?>>Patient</option>
+  </select>
+  </p>
   
-  <p>
-  <label for="department">Department</label><br>
+    <p>
+        <label for="department">Department</label> <br>
   <input 
   <?php
     if(isset($_SESSION["department"])){
         echo "value =".$_SESSION["department"];
-    }
-  ?>
-      type="text" name="department" placeholder ="Enter department" >
-  </select>
+    }?>
+      type="text" name="department" placeholder ="Enter department">
+  </p>
 
   <p><button class = "btn-success" type="submit">Register</button></p>
     

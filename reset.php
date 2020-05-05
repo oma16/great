@@ -3,7 +3,7 @@ include_once("header.php");
 require_once("function/alert.php");
 require_once('function/user.php');
 
-if(!is_user_loggedIn() && !is_token_set()){
+if(is_user_loggedIn() && is_token_set()){
 
     $_SESSION["error"] = "You are not authorized to view that page";
       header('location: login.php');
@@ -26,13 +26,13 @@ if(!is_user_loggedIn() && !is_token_set()){
 ?>
 </p>
 
-   <?php if(!is_user_loggedIn()){?>
+   <?php if(is_user_loggedIn()){?>
 <input 
 <?php
  if(is_token_set_in_session()){
       echo "value ='".$_SESSION['token']. "'";
   }else{
-      echo "value ='". $_GET['token']. "'";
+      //echo "value ='". $_GET['token']. "'";
   }
 
 ?> 

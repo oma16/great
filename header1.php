@@ -14,7 +14,7 @@
 
 
 <li><a href="bookappointment.php">Book Appointment</a></li>
-<li><a href="paybill.php" target="_blank"> Pay Bill</a></li>
+<li><a href="paybill.php" > Pay Bill</a></li>
 
 
     

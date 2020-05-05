@@ -2,7 +2,7 @@
 
 function is_user_loggedIn(){
 
-    if($_SESSION['loggedIn'] && !empty($_SESSION['loggleIn'])){
+    if($_SESSION['loggedIn'] && !empty($_SESSION['loggedIn'])){
         return true;
     }
       return false;
